@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Cryptor.Core.Abstractions;
+using Cryptor.Core.Abstraction;
 using Cryptor.Core.Enums;
 using Cryptor.Core.Models;
 

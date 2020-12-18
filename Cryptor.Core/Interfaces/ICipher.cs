@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cryptor.Core.Abstractions
+namespace Cryptor.Core.Interfaces
 {
     public interface ICipher
     {

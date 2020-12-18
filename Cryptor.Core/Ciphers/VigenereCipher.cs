@@ -1,6 +1,7 @@
 ﻿using Cryptor.Core.Models;
 using System;
 using System.Text;
+using Cryptor.Core.Abstraction;
 using Cryptor.Core.Enums;
 
 namespace Cryptor.Core.Ciphers

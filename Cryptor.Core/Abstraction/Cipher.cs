@@ -1,9 +1,8 @@
 ﻿using System;
-using Cryptor.Core.Abstractions;
-using Cryptor.Core.Entities;
+using Cryptor.Core.Interfaces;
 using Cryptor.Core.Models;
 
-namespace Cryptor.Core.Ciphers
+namespace Cryptor.Core.Abstraction
 {
     public abstract class Cipher : ICipher
     {
