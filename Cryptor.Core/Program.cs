@@ -1,5 +1,7 @@
 ﻿using System;
 using Cryptor.Core.Ciphers;
+using Cryptor.Core.Interfaces;
+using Cryptor.Core.Services;
 using Cryptor.Dal.Interfaces;
 using Cryptor.Dal.Repositories;
 
@@ -9,8 +11,10 @@ namespace Cryptor.Core
     {
         static void Main(String[] args)
         {
-            IUnitOfWork unitOfWork = new UnitOfWork("Data Source=I_SER_I;Initial Catalog=Languages;Integrated Security=True");
-            VigenereCipher vigenereCipher = new VigenereCipher(unitOfWork.Languages.Read(1), );
+            ILanguageService languageService = new LanguageService(new UnitOfWork("Data Source=I_SER_I;Initial Catalog=Languages;Integrated Security=True"));
+            var language = languageService.GetLanguage(570);
+            VigenereCipher vigenereCipher = new VigenereCipher(language, "пидор");
+            Console.WriteLine(vigenereCipher.Encrypt("Робокопи"));
         }
     }
 }

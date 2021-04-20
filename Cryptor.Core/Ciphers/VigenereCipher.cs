@@ -19,12 +19,11 @@ namespace Cryptor.Core.Ciphers
         private String GetRepeatKeyWord(Int32 inputTextLength)
         {
             StringBuilder stringBuilder = new StringBuilder(_keyWord);
-            while (_keyWord.Length < inputTextLength)
+            while (stringBuilder.Length < inputTextLength)
             {
                 stringBuilder.Append(_keyWord);
             }
-
-            return stringBuilder.Remove(0, inputTextLength).ToString();
+            return stringBuilder.Remove(inputTextLength, stringBuilder.Length - inputTextLength).ToString();
         }
 
         private String Crypt(String text, CryptMode mode)
@@ -44,8 +43,7 @@ namespace Cryptor.Core.Ciphers
 
                 var index = (Language.Count + Language.Alphabet.IndexOf(value, StringComparison.OrdinalIgnoreCase) +
                              Language.Alphabet.IndexOf(keyWordSymbol, StringComparison.OrdinalIgnoreCase) *
-                             (Int32) mode) %
-                            Language.Count;
+                             (Int32) mode) % Language.Count;
                 var symbolNew = Language.GetSymbolByIndex(index);
                 stringBuilder.Append
                 (

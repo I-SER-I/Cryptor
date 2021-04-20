@@ -4,7 +4,7 @@ using Cryptor.Core.Models;
 
 namespace Cryptor.Core.Abstraction
 {
-    public abstract class Cipher : ICipher
+   public abstract class Cipher : ICipher
     {
         protected Language Language;
         protected Cipher(Language language) => Language = language;
